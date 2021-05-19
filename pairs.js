@@ -38,17 +38,32 @@ Array.prototype.getRandom = function () {
 
 function pairs(names) {
   // Your code goes here
-  const chunks = [], n = names.length;
-  let i = 0;
-  while (i < n) {
-    chunks.push([names.getRandom(), names.getRandom()]);
-    i+=2;
+  if(names.length%2==0){
+    const chunks = [], n = names.length;
+    let i = 0;
+    while (i < n) {
+      chunks.push([names.getRandom(), names.getRandom()]);
+      i+=2;
+    }
+    return chunks;
   }
-  return chunks;
-}
-const arr = [1, 2, 3, 4, 5, 6, 7, 8];
-console.log(pairs(arr, 2));
 
+  else if (names.length%2==1){
+    const chunks = [], n = names.length;
+    let i = 0;
+    while (i < n) {
+      if(n===1){
+        chunks.push([names.getRandom()]);
+      }
+      chunks.push([names.getRandom(), names.getRandom()]);
+      i+=2;
+    }
+    return chunks;
+  }
+  
+}
+const arr = [1, 2, 3, 4, 5, 6, 7, 8,1];
+console.log(pairs(arr, 2));
 
 module.exports = pairs;
 
