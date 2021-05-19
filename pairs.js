@@ -38,10 +38,20 @@ Array.prototype.getRandom = function () {
 
 function pairs(names) {
   // Your code goes here
+  const chunks = [], n = names.length;
+  let i = 0;
+  while (i < n) {
+    chunks.push([names.getRandom(), names.getRandom()]);
+    i+=2;
+  }
+  return chunks;
 }
+const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+console.log(pairs(arr, 2));
+
 
 module.exports = pairs;
 
-console.log(
-  pairs(["Asis", "Hamsa", "Fawas", "Mishmish", "Hussein", "Lailz", "Mr Potato"])
-);
+// console.log(
+//   pairs(["Asis", "Hamsa", "Fawas", "Mishmish", "Hussein", "Lailz", "Mr Potato"])
+// );
